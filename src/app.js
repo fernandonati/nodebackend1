@@ -10,4 +10,4 @@ app.use(routes); //configure to routes instance
 app.use(errors());
 
 
-app.listen(3333); //server listen on port...
+module.exports = app;

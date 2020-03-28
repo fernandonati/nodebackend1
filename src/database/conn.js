@@ -1,6 +1,9 @@
 const knex = require('knex');
-const config = require('../../knexfile');
+const configuration = require('../../knexfile');
 
-const conn = knex(config.development);
+//enviroment variable for use in test db
+const EnvType = process.env.NODE_ENV === 'test' ? configuration.test : configuration.development; 
+
+const conn = knex(EnvType);
 
 module.exports = conn;
